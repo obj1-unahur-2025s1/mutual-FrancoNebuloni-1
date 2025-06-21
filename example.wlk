@@ -1,8 +1,8 @@
 class Viajes {
   const idiomas = {"español"}
 
-  method implicaEsfuerzo() = false
-  method sirveParaBroncearse() = false
+  method implicaEsfuerzo() = true
+  method sirveParaBroncearse() = true
   method cantidadDiasDeLaActividad() = 0
   method idiomasUsados() = idiomas
   method cambiarIdioma(unIdioma) {
@@ -24,7 +24,7 @@ class ViajesDePlaya inherits Viajes{
   override method sirveParaBroncearse() = true
 }
 
-class ExcursionesACiudad inherits Viajes{
+class ExcursionACiudad inherits Viajes{
   var property cantidadAtracciones
 
   override method cantidadDiasDeLaActividad() = cantidadAtracciones / 2
@@ -33,7 +33,7 @@ class ExcursionesACiudad inherits Viajes{
   override method esInteresante() = super() or cantidadAtracciones == 5
 }
 
-class ExcursionesACiudadTropical inherits ExcursionesACiudad {
+class ExcursionACiudadTropical inherits ExcursionACiudad {
   override method cantidadDiasDeLaActividad() = super() + 1
   override method sirveParaBroncearse() = true
 }
